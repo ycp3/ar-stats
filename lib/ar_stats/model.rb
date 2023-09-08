@@ -101,7 +101,7 @@ module ArStats
     end
 
     def samples_of_length(column, length, amount)
-      relation.where("length(#{column}) = #{length}").take(amount).pluck(column)
+      relation.where("length(#{column}) = #{length}").limit(amount).pluck(column)
     end
   end
 end
